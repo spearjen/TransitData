@@ -32,7 +32,7 @@ In constructing the linear regression model, we used scikit-learn as well as som
 Our final product is hosted on Heroku and uses a combination of HTML, CSS, and Bootstrap to organize and present our analysis in a user-friendly way. 
 
 ## Content Overview
-![US Map Showing Rail Stops](images/contiguous_states.jpg)
+![US Map Showing Rail Stops](images/contig.JPG)
 
 This screenshot shows the contiguous 48-states portion of the transit accessibility section of The Transit Hub. The background coloring of the map is the population density of each county. Red dots represent available data on rail stop locations, and blue dots represent available data on bus stop locations. 
 
