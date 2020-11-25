@@ -62,8 +62,10 @@
       <!-- Top Tableau Embed -->
       <div class="col-lg-7">
         <h1 class="display-3">Public Sentiment</h1>
-        <p class="lead">How do people feel about public transit in their states?</p>
+        <p class="lead">Tweets may give insight into how people feel about public transit<br>
         <hr class="my-4">
+        <p>Click on a dot to see the polarity and subjectivity rating for each state’s tweets about public transit. A polarity score closer to +1 means the state was tweeting more positively, where a score closer to -1 means more negative tweets, and a score closer to 0 is neutral. A subjectivity score closer to 0 indicates objective tweets, where a score closer to +1 indicates subjective tweets.</p>
+
         <div class='tableauPlaceholder' id='viz1605979174951' style='position: relative' style='border: 1px solid rgba(0,0,0,.125)'>
           <noscript>
             <a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Po&#47;PolarityvsSubjectivityofState-LevelPublicTransitRelatedTweets&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a>
@@ -94,11 +96,11 @@
             vizElement.parentNode.insertBefore(scriptElement, vizElement);                
           </script>
         </div>
-        <br>
-        <p>Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-        <br>
+        <!-- <p>Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p> -->
 
         <!-- Bottom Tableau -->
+        <br>
+        <p>Hover over the circles on this graph to see the overall polarity and subjectivity associated with general US tweets about public transit.</p>
         <div class='tableauPlaceholder' id='viz1606268747732' style='position: relative' style='border: 1px solid rgba(0,0,0,.125)'>
           <noscript><a href='#'>
             <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;US&#47;USTweetSentiment-PubTransit&#47;Sheet1&#47;1_rss.png' style='border: none' /></a>
@@ -128,7 +130,7 @@
           vizElement.parentNode.insertBefore(scriptElement, vizElement);                
         </script>
         <br>
-        <p>Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+        <!-- <p>Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p> -->
       </div>
       
 
@@ -136,27 +138,20 @@
       <div class="col-lg-3 offset-lg-.5">
         <br>
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
-
         <div class="card mb-3 right">
           <div class="card-body">
-            <h5 class="card-title">Machine Learning Linear Regression Model</h5>
+            <h5 class="card-title">Ridership & Funding</h5>
           </div>
           <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
-            <rect width="100%" height="100%" fill="#343a40"></rect>
-            <a img src = #>
+            <rect width="95%" height="95%" style= 'fill: #343a40'></rect>
           </svg>
           <div class="card-body">
 
-            <p class="card-text">Image and explanation</p>
+            <p class="card-text">The orange dots on this graph show the predicted ridership over the past 20 years based on urban transit funding, the previous year’s ridership, and the ridership from two years ago. The blue dots show actual ridership, demonstrating the relatively high accuracy of this model and its potential to predict future ridership based on these features.</p>
           </div>
         </div>
       </div>
-
-
+    </div>
    </div>
   </div>
 
