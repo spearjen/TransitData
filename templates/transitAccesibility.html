@@ -1,22 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Public Transportation: United States</title>
-    <!-- <link rel="shortcut icon" href="../graphics/favicon.ico"> -->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>The Transit Hüb</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/sandstone/bootstrap.min.css" integrity="sha384-zEpdAL7W11eTKeoBJK1g79kgl9qjP7g84KfK3AZsuonx38n8ad+f5ZgXtoSDxPOh" crossorigin="anonymous">
-    <link rel="stylesheet" href = "gridlayout.css"
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
-<div class = "container">
-    <nav>Public Transportation</nav>
-    <main>How does public transportation work in the United States?</main>
-    <div id="sidebar">Preview Content</div>
-    <div id="content1">Funding</div>
-    <div id="content2">Accesiblity</div>
-    <div id="content3">Public Sentiment</div>
-    <footer>Footer</footer>
-</div>
+<!-- Navbar -->
+<body style = "background-color: #e9ecef">
+    <div style="background-image: url('https://github.com/spearjen/TransitData/blob/spearjay/graphics/pubTransitimage.jpg?raw=true');"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">The Transit Hüb</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="naturalLanguage">Public Sentiment</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="timeSeriesFunding">Federal Funding: Time Series</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="fundingBySource">Funding Sources by City & Agency</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="transitAccesibility">Availability</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">References & Resources</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Public Transportation during a Pandemic</a>
+                        <a class="dropdown-item" href="#">Machine Learning & Public Transportation</a>
+                        <a class="dropdown-item" href="#">More Articles of Interest</a>
+                        <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Data Sources</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+<!-- Container -->
+    <div class = "container">
+        <div class="jumbotron">
+            <h1 class="display-3">Public Transit Availability</h1>
+            <p class="lead">Distribution of bus and rail stops across the US based on available data</p>
+            <hr class="my-4">
+            <div class='tableauPlaceholder' id='viz1605981070712' style='position: relative' style='border: 1px solid rgba(0,0,0,.125)'>
+                <noscript><a href='#'>
+                    <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bu&#47;BusandRail&#47;PopulationDensity&#47;1_rss.png' style='border: none' /></a>
+                </noscript>
+                <object class='tableauViz'  style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                    <param name='embed_code_version' value='3' /> 
+                    <param name='site_root' value='' />
+                    <param name='name' value='BusandRail&#47;PopulationDensity' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bu&#47;BusandRail&#47;PopulationDensity&#47;1.png' /> 
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='language' value='en' />
+                    <param name='filter' value='publish=yes' />
+                </object>
+            </div>                
+            <script type='text/javascript'>                    
+                var divElement = document.getElementById('viz1605981070712');                    
+                var vizElement = divElement.getElementsByTagName('object')[0];                    
+                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} 
+                    else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} 
+                    else { vizElement.style.width='100%';vizElement.style.height='727px';}                     
+                var scriptElement = document.createElement('script');                    
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+            </script>
+        </div>
+    </div>
+</body>

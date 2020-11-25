@@ -1,57 +1,42 @@
-.container {
+.containerjs {
     height: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, 100px);
     grid-template-rows: repeat(2, 100px);
     grid-template-areas:
-        "m h h h h h h h h h h h"
-        "m c1 c1 c2 c2 c3 c3 c4 c4 c5 c5 c6"
-        "m f f f f f f f f f f f";
+        "n n n n n n n n n n n n"
+        "l c1 c1 c1 c1 c1 c2 c2 c2 c2 c2 r"
+        "l f f f f f f f f f f r";
     grid-gap: 3px;
     background-color: #325d88;
 }
 
-.header {
-    grid-area: h;
+.navbarjs {
+    grid-area: n;
     background-color: #6610f2;
 }
 
-.menu {
-    grid-area: m;
+.leftjs {
+    grid-area: l;
     background-color: #8e8c84;
 }
 
-.content1{
+.rightjs {
+    grid-area: r;
+    background-color: #6610f2;
+}
+
+.content1js{
     grid-area: c1;
     background-color: #e83e8c;
 }
 
-.content2{
+.content2js{
     grid-area: c2;
     background-color: #fff;
 }
 
-.content3{
-    grid-area: c3;
-    background-color: #dfd7ca;
-}
-
-.content4{
-    grid-area: c4;
-    background-color: #8e8c84;
-}
-
-.content5{
-    grid-area: c5;
-    background-color: #212529;
-}
-
-.content6{
-    grid-area: c6;
-    background-color: #c3e7f6;
-}
-
-.footer {
+.footerjs {
     grid-area: f;
     background-color: #ffc107;
 }

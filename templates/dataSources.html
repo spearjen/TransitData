@@ -14,54 +14,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
-<!-- Container -->
-<style>      
-    .bgSizeCover {
-        background-image: url(https://github.com/spearjen/TransitData/blob/spearjay/graphics/pubTransitimage.jpg?raw=true);
-        background-size: cover;
-        height: 1500px;
-        resize: both;
-        /* border: .5px solid rgba(0,0,0,.125); */
-    }
-    .container {
-        height: 1600px;
-        display: grid;
-        grid-template-columns: repeat(100px auto-fit, 100px);
-        grid-template-rows: repeat(2, 100px);
-        grid-template-areas:
-            "n n n n n n n n n n n n"
-            "l j j j j j j j j j j r"
-            "f f f f f f f f f f f f";
-        grid-gap: 3px;
-        background-color: #e9ecef;
-    }
-    .vl {
-        border-left: 1px solid black;
-        height: 1650px;
-        margin-bottom: 25px;
-        margin-right: 25px;
-        margin-left: 25px;
-    }
-    .left {    
-        grid-area: l;
-        background-color: black;
-    }
-    .right {
-        grid-area: r;
-        background-color: #e9ecef;
-    }
-    .footer {
-        grid-area: f;
-        background-color: #black
-    }
-    .navbar {
-        grid-area: n;
-    }
-
-    </style>
-
 <!-- Navbar -->
 <body style = "background-color: #e9ecef">
+    <div style="background-image: url('https://github.com/spearjen/TransitData/blob/spearjay/graphics/pubTransitimage.jpg?raw=true');"></div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="/">The Transit Hüb</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
@@ -98,20 +53,20 @@
                     </div>
                 </li>
             </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </div>
     </nav>
 
-<!-- Content -->
-    <div class="jumbotron">
-        <div class = "container">
-            <h1 class="display-3">The Transit Hüb
-                <p class="lead">Providing reliable data for public transit decision-making</p>
-                <div class="bgSizeCover"></div>
-            </h1>
-            <div class="vl"></div>
+<!-- Container -->
+    <div class = "container">
+        <div class="jumbotron">
+            <h1 class="display-3">The Transit Hub</h1>
+            <p class="lead"></p>
             <hr class="my-4">
-
-            <p><br><br>Public transit is an integral part of the landscape of an organized society. A well-developed and well-patronized public transit system provides connectivity to schooling, jobs, and other essential services. These services are especially useful for a citizenry without the financial resources to sustain the cost of ownership of a private vehicle. A robust and sustainable public transit system is also a pivotal force in combating carbon emissions as nations come to terms in the global effort in addressing climate change. 
+            <p>Public transit is an integral part of the landscape of an organized society. A well-developed and well-patronized public transit system provides connectivity to schooling, jobs, and other essential services. These services are especially useful for a citizenry without the financial resources to sustain the cost of ownership of a private vehicle. A robust and sustainable public transit system is also a pivotal force in combating carbon emissions as nations come to terms in the global effort in addressing climate change. 
                 <br>
                 <br>
                 According to the American Public Transportation Association, Americans took 9.9 billion trips on public transit in 2019, which drives home the core importance of public transit in the US and the extent to which Americans rely on this public service.
@@ -120,7 +75,7 @@
                 Public transit is also a matter that is regularly on local and state level ballots to increase or decrease funding, and is one of a few government-funded services that receives lip service support on both sides of the political aisle. However, information on public transit stops, funding, and ridership is scattered at best. Various stakeholders rely on this data to further their goals. Lawmakers amend policy and funding in order to address the needs of their constituents. Advocacy groups use this data in order to amend their requests and strategy. Local businesses use transportation options in their benefits packages when attracting new talent. 
                 <br>
                 <br>
-                Our tool, The Transit Hüb, offers a comprehensive, interactive picture of the public transit landscape across the United States.
+                Our tool, The Transit Hub, offers a comprehensive, interactive picture of the public transit landscape across the United States.
                 <br>
                 <br>
                 Users looking to understand the volume and sources of transit funding in different states can access the Public Transportation Funding map and see both at a glance and on a more granular scale where funding comes from for different states and the volume of said funding. On the funding page, users may also access a machine learning linear regression model that predicts transit ridership based on urban transit funding and previous year’s as well as the previous two year’s ridership, with an error rate of less than 10%. This will prove useful to lawmakers and/or advocates looking to use all available funding in a given area and understand where funding may have been exhausted from a certain source. The machine learning model will also allow users to understand approximately how much they can expect ridership to change given changes in funding. 
@@ -135,21 +90,5 @@
                 (link to natural language processing page)
                 </p>
         </div>
-
-
-<!-- Left side     -->
-        <!-- <div class="left">
-            <div class="container">
-                <h1 class="display-3">The Transit Hub
-                    <p class="lead">Providing reliable data for public transit decision-making</p>
-
-                </h1>
-            </div>
-        </div>
-        <div class="right">
-        </div>        
-        <div class="footer">
-        </div>
-    </div> -->
-
+    </div>
 </body>

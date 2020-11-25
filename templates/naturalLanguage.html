@@ -1,297 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Public Transportation: United States</title>
-    <!-- <link rel="shortcut icon" href="../graphics/favicon.ico"> -->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>Public Transportation Hub</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/sandstone/bootstrap.min.css" integrity="sha384-zEpdAL7W11eTKeoBJK1g79kgl9qjP7g84KfK3AZsuonx38n8ad+f5ZgXtoSDxPOh" crossorigin="anonymous">
-
-    <!-- Navbar Style: Makes Dropdown Menu Work!
-================================================== -->
-<style>
-    .navbar-brand > svg {
-        display: inline-block;
-        margin-right: .5rem;
-        vertical-align: middle;
-        width: 20px;
-        height: 20px;
-    }
-    
-    .display-5 {
-        font-size: 3rem;
-    }
-    
-    .social {
-        height: 75px;
-    }
-    
-    @media (min-width: 576px) {
-        .social {
-            height: 30px;
-        }
-    }
-    
-    .input-group .dropdown-toggle::after {
-        transition: -webkit-transform .35s ease;
-        transition: transform .35s ease;
-        transition: transform .35s ease, -webkit-transform .35s ease;
-    }
-    
-    .input-group .dropdown-toggle-open::after {
-        -webkit-transform: rotate(-180deg);
-        transform: rotate(-180deg);
-    }
-    
-    .book-card img {
-        width: auto;
-        height: 250px;
-    }
-
-    .navbar-toggler {
-
-    }
-
-  </style>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <!-- Navbar
-================================================== -->
-<body>
-    <div class="wrapper">
-      <div class = "bs-component">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">Public Transportation</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto" style="list-style: none;">
-            <li class="nav-item dropdown act">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Statistical Analysis</a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Public Sentiment</a></br>
-                <a class="dropdown-item" href="#">Population Density</a></br>
-                <a class="dropdown-item" href="#">Median Household Income</a></br>
-                <a class="dropdown-item" href="#">Rural Areas</a></br>
-                <a class="dropdown-item" href="#">Urban Areas</a></br>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Comparisons of Selected Markets</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Data</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+<body style = "background-color: #e9ecef"></body>
 
-
-
-    <!-- Container
-================================================== -->
-  <div class="bs-docs-section">
-        <div class="row">
-        <div class="col-lg-12">
-            <div class="bs-component">
-            <div class="jumbotron">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Public Transportation: United States</title>
-    <!-- <link rel="shortcut icon" href="../graphics/favicon.ico"> -->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/sandstone/bootstrap.min.css" integrity="sha384-zEpdAL7W11eTKeoBJK1g79kgl9qjP7g84KfK3AZsuonx38n8ad+f5ZgXtoSDxPOh" crossorigin="anonymous">
-
-    <!-- Navbar Style: Makes Dropdown Menu Work!
-================================================== -->
-<style>
-    .navbar-brand > svg {
-        display: inline-block;
-        margin-right: .5rem;
-        vertical-align: middle;
-        width: 20px;
-        height: 20px;
-    }
-    
-    .display-5 {
-        font-size: 3rem;
-    }
-    
-    .social {
-        height: 75px;
-    }
-    
-    @media (min-width: 576px) {
-        .social {
-            height: 30px;
-        }
-    }
-    
-    .input-group .dropdown-toggle::after {
-        transition: -webkit-transform .35s ease;
-        transition: transform .35s ease;
-        transition: transform .35s ease, -webkit-transform .35s ease;
-    }
-    
-    .input-group .dropdown-toggle-open::after {
-        -webkit-transform: rotate(-180deg);
-        transform: rotate(-180deg);
-    }
-    
-    .book-card img {
-        width: auto;
-        height: 250px;
-    }
-
-    .navbar-toggler {
-
-    }
-
-  </style>
-
-</head>
-
-<body>
-    <!--  Navbar
-================================================== -->
-<!-- <body>
-    <div class="wrapper">
-      <div class = "bs-component">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="../templates/tableauDashTransit.html">Public Transportation</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto" style="list-style: none;">
-            <li class="nav-item dropdown act">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Statistical Analysis</a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Public Sentiment</a></br>
-                <a class="dropdown-item" href="#">Population Density</a></br>
-                <a class="dropdown-item" href="#">Median Household Income</a></br>
-                <a class="dropdown-item" href="#">Rural Areas</a></br>
-                <a class="dropdown-item" href="#">Urban Areas</a></br>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Comparisons of Selected Markets</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Data</a>
-            </li>
-          </ul>
-          
-        </div>
-      </nav>
-    </div>
- --> 
-
-
-    <!-- Container
-================================================== -->
-<!-- <div class="bs-docs-section">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="bs-component">
-          <div class="jumbotron">
-            
-            <h2 class="display-3">Public Transportation in the United States</br></h2>
-            </br>
-            <p class="lead">Project description / goals
-            </br>
-            Description of links.</br>
-            Further study.</p>
-            <div id="bottomHalf"></div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">The Transit Hüb</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="naturalLanguage">Public Sentiment</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="timeSeriesFunding">Federal Funding: Time Series</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="fundingBySource">Funding Sources by City & Agency</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="transitAccesibility">Availability</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">References & Resources</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Public Transportation during a Pandemic</a>
+            <a class="dropdown-item" href="#">Machine Learning & Public Transportation</a>
+            <a class="dropdown-item" href="#">More Articles of Interest</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Data Sources</a>
           </div>
+        </li>
+        </ul>
+    </div>
+  </nav>
+
+<!-- Container -->
+  <div class = "container" id="container">
+    <div class ="row">
+
+      <!-- Top Tableau Embed -->
+      <div class="col-lg-7">
+        <h1 class="display-3">Public Sentiment</h1>
+        <p class="lead">How do people feel about public transit in their states?</p>
+        <hr class="my-4">
+        <div class='tableauPlaceholder' id='viz1605979174951' style='position: relative' style='border: 1px solid rgba(0,0,0,.125)'>
+          <noscript>
+            <a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Po&#47;PolarityvsSubjectivityofState-LevelPublicTransitRelatedTweets&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a>
+          </noscript>
+          <object class='tableauViz'  style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+            <param name='embed_code_version' value='3' /> 
+            <param name='site_root' value='' />
+            <param name='name' value='PolarityvsSubjectivityofState-LevelPublicTransitRelatedTweets&#47;Dashboard2' />
+            <param name='tabs' value='no' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Po&#47;PolarityvsSubjectivityofState-LevelPublicTransitRelatedTweets&#47;Dashboard2&#47;1.png' /> 
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='language' value='en' /><param name='filter' value='publish=yes' />
+          </object>    
+          <script type='text/javascript'>                    
+            var divElement = document.getElementById('viz1605979174951');                    
+            var vizElement = divElement.getElementsByTagName('object')[0];                    
+              if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='650px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} 
+              else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='650px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} 
+              else { vizElement.style.width='100%';vizElement.style.height='727px';}                     
+            var scriptElement = document.createElement('script');                    
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+          </script>
+        </div>
+        <br>
+        <p>Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+        <br>
+
+        <!-- Bottom Tableau -->
+        <div class='tableauPlaceholder' id='viz1606268747732' style='position: relative' style='border: 1px solid rgba(0,0,0,.125)'>
+          <noscript><a href='#'>
+            <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;US&#47;USTweetSentiment-PubTransit&#47;Sheet1&#47;1_rss.png' style='border: none' /></a>
+          </noscript>
+          <object class='tableauViz'  style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+            <param name='embed_code_version' value='3' /> 
+            <param name='site_root' value='' />
+            <param name='name' value='USTweetSentiment-PubTransit&#47;Sheet1' />
+            <param name='tabs' value='no' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;US&#47;USTweetSentiment-PubTransit&#47;Sheet1&#47;1.png' /> 
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='language' value='en' />
+          </object>
+        </div>                
+        <script type='text/javascript'>                    
+          var divElement = document.getElementById('viz1606268747732');                    
+          var vizElement = divElement.getElementsByTagName('object')[0];                    
+          vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    
+          var scriptElement = document.createElement('script');                    
+          scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+          vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+        </script>
+        <br>
+        <p>Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
       </div>
-    </div>
-  </div> -->
-  <div class="bs-docs-section">
-        <div class="row">
-        <div class="col-lg-12">
-            <div class="bs-component">
-            <div class="jumbotron">
-                <div class='tableauPlaceholder' id='viz1605796732061' style='position: relative'><noscript>
-                    <a href='#'>
-                        <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;US&#47;USTweetSentiment-PubTransit&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript>
-                        <object class='tableauViz'  style='display:none;'>
-                            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-                            <param name='embed_code_version' value='3' /> <param name='site_root' value='' />
-                            <param name='name' value='USTweetSentiment-PubTransit&#47;Sheet1' /><param name='tabs' value='no' />
-                            <param name='toolbar' value='yes' />
-                            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;US&#47;USTweetSentiment-PubTransit&#47;Sheet1&#47;1.png' /> 
-                            <param name='animate_transition' value='yes' />
-                            <param name='display_static_image' value='yes' />
-                            <param name='display_spinner' value='yes' />
-                            <param name='display_overlay' value='yes' />
-                            <param name='display_count' value='yes' />
-                            <param name='language' value='en' />
-                            <param name='filter' value='publish=yes' />
-                        </object>
-                    </div>                
-                    <script type='text/javascript'>                    
-                        var divElement = document.getElementById('viz1605796732061');                    
-                        var vizElement = divElement.getElementsByTagName('object')[0];                    
-                        vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    
-                        var scriptElement = document.createElement('script');                    
-                        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
-                        vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-                    </script>
-                <script type='text/javascript'>                    
-                    var divElement = document.getElementById('viz1605627688195');                    
-                    var vizElement = divElement.getElementsByTagName('object')[0];                    
-                        if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} 
-                        else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} 
-                        else { vizElement.style.width='100%';vizElement.style.height='777px';}                     
-                    var scriptElement = document.createElement('script');                    
-                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
-                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-                </script>
-            </div>
-        </div>
-    </div>
+      
 
-  <!-- Pull in JS, Stylesheets
-================================================== -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-</body>
-</html>
-              
-                <script type='text/javascript'>                    
-                    var divElement = document.getElementById('viz1605627688195');                    
-                    var vizElement = divElement.getElementsByTagName('object')[0];                    
-                        if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} 
-                        else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} 
-                        else { vizElement.style.width='100%';vizElement.style.height='777px';}                     
-                    var scriptElement = document.createElement('script');                    
-                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
-                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-                </script>
-            </div>
-        </div>
-    </div>
+      <!-- Card -->
+      <div class="col-lg-3 offset-lg-.5">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 
-  <!-- Pull in JS, Stylesheets
-================================================== -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <div class="card mb-3 right">
+          <div class="card-body">
+            <h5 class="card-title">Machine Learning Linear Regression Model</h5>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+            <rect width="100%" height="100%" fill="#343a40"></rect>
+            <a img src = #>
+          </svg>
+          <div class="card-body">
+
+            <p class="card-text">Image and explanation</p>
+          </div>
+        </div>
+      </div>
+
+
+   </div>
+  </div>
+
 </body>
-</html>
