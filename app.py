@@ -25,6 +25,10 @@ api = Api(app)
 def index():
     return render_template("index.html")
 
+@app.route("/index3")
+def index3():
+    return render_template("index3.html")
+
 @app.route("/timeSeriesFunding")
 def timeSeriesFunding():
     return render_template("timeSeriesFunding.html")

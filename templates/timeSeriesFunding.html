@@ -4,145 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
     <title>The Transit Hüb</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/sandstone/bootstrap.min.css" integrity="sha384-zEpdAL7W11eTKeoBJK1g79kgl9qjP7g84KfK3AZsuonx38n8ad+f5ZgXtoSDxPOh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="../static/js/logic2.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
-<!-- Navbar -->
+
 <body style = "background-color: #e9ecef">
-
-<!-- /*Eliminates padding, centers the thumbnail */ -->
-<style>
-body, html {
-padding: 0;
-margin: 0;
-text-align: center;
-}
-
-/* Styles the thumbnail */
-
-a.lightbox img {
-height: 150px;
-border: 3px solid white;
-box-shadow: 0px 0px 8px rgba(0,0,0,.3);
-margin: 94px 20px 20px 20px;
-}
-
-/* Styles the lightbox, removes it from sight and adds the fade-in transition */
-
-.lightbox-target {
-position: fixed;
-top: -100%;
-width: 100%;
-background: rgba(0,0,0,.7);
-width: 100%;
-opacity: 0;
--webkit-transition: opacity .5s ease-in-out;
--moz-transition: opacity .5s ease-in-out;
--o-transition: opacity .5s ease-in-out;
-transition: opacity .5s ease-in-out;
-overflow: hidden;
-}
-
-/* Styles the lightbox image, centers it vertically and horizontally, adds the zoom-in transition and makes it responsive using a combination of margin and absolute positioning */
-
-.lightbox-target img {
-margin: auto;
-position: absolute;
-top: 0;
-left:0;
-right:0;
-bottom: 0;
-max-height: 0%;
-max-width: 0%;
-border: 3px solid white;
-box-shadow: 0px 0px 8px rgba(0,0,0,.3);
-box-sizing: border-box;
--webkit-transition: .5s ease-in-out;
--moz-transition: .5s ease-in-out;
--o-transition: .5s ease-in-out;
-transition: .5s ease-in-out;
-}
-
-/* Styles the close link, adds the slide down transition */
-
-a.lightbox-close {
-display: block;
-width:50px;
-height:50px;
-box-sizing: border-box;
-background: white;
-color: black;
-text-decoration: none;
-position: absolute;
-top: -80px;
-right: 0;
--webkit-transition: .5s ease-in-out;
--moz-transition: .5s ease-in-out;
--o-transition: .5s ease-in-out;
-transition: .5s ease-in-out;
-}
-
-/* Provides part of the "X" to eliminate an image from the close link */
-
-a.lightbox-close:before {
-content: "";
-display: block;
-height: 30px;
-width: 1px;
-background: black;
-position: absolute;
-left: 26px;
-top:10px;
--webkit-transform:rotate(45deg);
--moz-transform:rotate(45deg);
--o-transform:rotate(45deg);
-transform:rotate(45deg);
-}
-
-/* Provides part of the "X" to eliminate an image from the close link */
-
-a.lightbox-close:after {
-content: "";
-display: block;
-height: 30px;
-width: 1px;
-background: black;
-position: absolute;
-left: 26px;
-top:10px;
--webkit-transform:rotate(-45deg);
--moz-transform:rotate(-45deg);
--o-transform:rotate(-45deg);
-transform:rotate(-45deg);
-}
-
-/* Uses the :target pseudo-class to perform the animations upon clicking the .lightbox-target anchor */
-
-.lightbox-target:target {
-opacity: 1;
-top: 0;
-bottom: 0;
-}
-
-.lightbox-target:target img {
-max-height: 100%;
-max-width: 100%;
-}
-
-.lightbox-target:target a.lightbox-close {
-top: 0px;
-}
-</style>
-
-
-    <div style="background-image: url('https://github.com/spearjen/TransitData/blob/spearjay/graphics/pubTransitimage.jpg?raw=true');"></div>
+    <style>
+        #currentImg {
+        max-width: 100%;
+        max-height: 100%;
+        border: 1px solid rgba(0,0,0,.125)
+        }
+        .card-title {
+            font-size: 12px;
+        }
+    </style>
+    
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="/">The Transit Hüb</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
@@ -184,6 +69,51 @@ top: 0px;
 
 <!-- Container -->
     <div class = "container">
-        <img src="https://public.tableau.com/views/FederalFundingperState/FederalFunding?:language=en&:display_count=y&:origin=viz_share_link" class="img-thumbnail">
+        <div class = "row">
+            <div class="col-sm-10">
+                <h1 class="display-3">Funding: Time Series</h1>
+                <p class="lead">How has federal funding changed over time?</p>
+                <hr class="my-4">
+                <p></p>
+                <div class = 'changeViz'></div>
+            </div>
+
+            <div class="col-sm-2">
+                <div class="card mb-3">
+                    
+                    <h5 class="card-header" style='font-size:13pt'>Select a chart</h3>
+
+                    <div class="card-body">
+                        <h11 class="card-title">Total Federal Funding</h11>
+                        <img class="img-thumbnail" img src="https://github.com/spearjen/TransitData/blob/spearjay/graphics/TotalFederalFunding.png?raw=true">
+
+                        <h11 class="card-title">State of Good Repair Funding</h11>
+                        <img class="img-thumbnail" img src="https://github.com/spearjen/TransitData/blob/spearjay/graphics/StateOfGoodRepairFunding.png?raw=true">
+
+                        <h11 class="card-title">Split Funding</h11>
+                        <img class="img-thumbnail" img src="https://github.com/spearjen/TransitData/blob/spearjay/graphics/CategorySplitFunding.png?raw=true">
+
+                        <h11 class="card-title">Total vs. Ridership</h11>
+                        <img class="img-thumbnail" img src="https://github.com/spearjen/TransitData/blob/spearjay/graphics/TotalVsRidership.png?raw=true">
+
+                        <h11 class="card-title">Sales vs. Ridership</h11>
+                        <img class="img-thumbnail" img src="https://github.com/spearjen/TransitData/blob/spearjay/graphics/SalesVsRidership.png?raw=true">
+
+                        <h11 class="card-title">Rail vs. Ridership</h11>
+                        <img class="img-thumbnail" img src="https://github.com/spearjen/TransitData/blob/spearjay/graphics/RailVsRidership.png?raw=true">
+
+                        <h11 class="card-title">Bus vs. Ridership</h11>
+                        <img class="img-thumbnail" img src="https://github.com/spearjen/TransitData/blob/spearjay/graphics/BusVsRidership.png?raw=true">
+
+                        <h11 class="card-title">Funding per State</h11>
+                        <img class="img-thumbnail" img src="https://github.com/spearjen/TransitData/blob/spearjay/graphics/FederalFundingPerState.png?raw=true">
+
+                        <h11 class="card-title">Transit Data</h11>
+                        <img class="img-thumbnail" img src="https://github.com/spearjen/TransitData/blob/spearjay/graphics/TransitData.png?raw=true">
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
 </body>
