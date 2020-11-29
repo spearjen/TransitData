@@ -16,6 +16,132 @@
 
 <!-- Navbar -->
 <body style = "background-color: #e9ecef">
+
+<!-- /*Eliminates padding, centers the thumbnail */ -->
+<style>
+body, html {
+padding: 0;
+margin: 0;
+text-align: center;
+}
+
+/* Styles the thumbnail */
+
+a.lightbox img {
+height: 150px;
+border: 3px solid white;
+box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+margin: 94px 20px 20px 20px;
+}
+
+/* Styles the lightbox, removes it from sight and adds the fade-in transition */
+
+.lightbox-target {
+position: fixed;
+top: -100%;
+width: 100%;
+background: rgba(0,0,0,.7);
+width: 100%;
+opacity: 0;
+-webkit-transition: opacity .5s ease-in-out;
+-moz-transition: opacity .5s ease-in-out;
+-o-transition: opacity .5s ease-in-out;
+transition: opacity .5s ease-in-out;
+overflow: hidden;
+}
+
+/* Styles the lightbox image, centers it vertically and horizontally, adds the zoom-in transition and makes it responsive using a combination of margin and absolute positioning */
+
+.lightbox-target img {
+margin: auto;
+position: absolute;
+top: 0;
+left:0;
+right:0;
+bottom: 0;
+max-height: 0%;
+max-width: 0%;
+border: 3px solid white;
+box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+box-sizing: border-box;
+-webkit-transition: .5s ease-in-out;
+-moz-transition: .5s ease-in-out;
+-o-transition: .5s ease-in-out;
+transition: .5s ease-in-out;
+}
+
+/* Styles the close link, adds the slide down transition */
+
+a.lightbox-close {
+display: block;
+width:50px;
+height:50px;
+box-sizing: border-box;
+background: white;
+color: black;
+text-decoration: none;
+position: absolute;
+top: -80px;
+right: 0;
+-webkit-transition: .5s ease-in-out;
+-moz-transition: .5s ease-in-out;
+-o-transition: .5s ease-in-out;
+transition: .5s ease-in-out;
+}
+
+/* Provides part of the "X" to eliminate an image from the close link */
+
+a.lightbox-close:before {
+content: "";
+display: block;
+height: 30px;
+width: 1px;
+background: black;
+position: absolute;
+left: 26px;
+top:10px;
+-webkit-transform:rotate(45deg);
+-moz-transform:rotate(45deg);
+-o-transform:rotate(45deg);
+transform:rotate(45deg);
+}
+
+/* Provides part of the "X" to eliminate an image from the close link */
+
+a.lightbox-close:after {
+content: "";
+display: block;
+height: 30px;
+width: 1px;
+background: black;
+position: absolute;
+left: 26px;
+top:10px;
+-webkit-transform:rotate(-45deg);
+-moz-transform:rotate(-45deg);
+-o-transform:rotate(-45deg);
+transform:rotate(-45deg);
+}
+
+/* Uses the :target pseudo-class to perform the animations upon clicking the .lightbox-target anchor */
+
+.lightbox-target:target {
+opacity: 1;
+top: 0;
+bottom: 0;
+}
+
+.lightbox-target:target img {
+max-height: 100%;
+max-width: 100%;
+}
+
+.lightbox-target:target a.lightbox-close {
+top: 0px;
+}
+</style>
+
+
     <div style="background-image: url('https://github.com/spearjen/TransitData/blob/spearjay/graphics/pubTransitimage.jpg?raw=true');"></div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="/">The Transit Hüb</a>
@@ -58,41 +184,6 @@
 
 <!-- Container -->
     <div class = "container">
-        <div class="jumbotron">
-            <h1 class="display-3">Time Series Funding</h1>
-            <p class="lead">How has federal funding changed for public transit over time?</p>
-            <hr class="my-4">
-            <div class='tableauPlaceholder' id='viz1606095517838' style='position: relative' style='border: 1px solid rgba(0,0,0,.125)>
-                <noscript>
-                    <a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fu&#47;FundingCategory&#47;FundingCategory&#47;1_rss.png' style='border: none' /></a>
-                </noscript>
-                <object class='tableauViz'  style='display:none;'>
-                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-                    <param name='embed_code_version' value='3' /> 
-                    <param name='site_root' value='' />
-                    <param name='name' value='FundingCategory&#47;FundingCategory' />
-                    <param name='tabs' value='no' />
-                    <param name='toolbar' value='yes' />
-                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fu&#47;FundingCategory&#47;FundingCategory&#47;1.png' /> 
-                    <param name='animate_transition' value='yes' />
-                    <param name='display_static_image' value='yes' />
-                    <param name='display_spinner' value='yes' />
-                    <param name='display_overlay' value='yes' />
-                    <param name='display_count' value='yes' />
-                    <param name='language' value='en' />
-                </object>
-            </div>                
-            <script type='text/javascript'>                    
-                var divElement = document.getElementById('viz1606095517838');                    
-                var vizElement = divElement.getElementsByTagName('object')[0];                    
-                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} 
-                    else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} 
-                    else { vizElement.style.width='100%';vizElement.style.height='727px';}                     
-                var scriptElement = document.createElement('script');                    
-                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
-                vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-            </script>            
-
-        </div>
+        <img src="https://public.tableau.com/views/FederalFundingperState/FederalFunding?:language=en&:display_count=y&:origin=viz_share_link" class="img-thumbnail">
     </div>
 </body>
