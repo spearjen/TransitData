@@ -25,25 +25,29 @@ api = Api(app)
 def index():
     return render_template("index.html")
 
-@app.route("/index3")
-def index3():
-    return render_template("index3.html")
+@app.route("/naturalLanguage")
+def naturalLanguage():
+    return render_template("naturalLanguage.html")
 
 @app.route("/timeSeriesFunding")
 def timeSeriesFunding():
     return render_template("timeSeriesFunding.html")
 
-@app.route("/naturalLanguage")
-def naturalLanguage():
-    return render_template("naturalLanguage.html")
+@app.route("/fundingBySource")
+def fundingBySource():
+    return render_template("fundingBySource.html")
 
 @app.route("/transitAccesibility")
 def transitAccesibility():
     return render_template("transitAccesibility.html")
 
-@app.route("/fundingBySource")
-def fundingBySource():
-    return render_template("fundingBySource.html")
+@app.route("/resources")
+def resources():
+    return render_template("resources.html")
+
+@app.route("/methods")
+def methods():
+    return render_template("methods.html")
 
 @app.route("/dataSources")
 def dataSources():

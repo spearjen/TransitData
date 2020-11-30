@@ -18,7 +18,7 @@
 <body style = "background-color: #e9ecef">
     <div style="background-image: url('https://github.com/spearjen/TransitData/blob/spearjay/graphics/pubTransitimage.jpg?raw=true');"></div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">The Transit Hüb</a>
+        <a class="navbar-brand" href="#">The Transit Hüb</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -45,50 +45,50 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">References & Resources</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Public Transportation during a Pandemic</a>
-                        <a class="dropdown-item" href="#">Machine Learning & Public Transportation</a>
-                        <a class="dropdown-item" href="#">More Articles of Interest</a>
+                        <a class="dropdown-item" href="resources">Resources of Interest</a>
                         <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="methods">Methods & Findings</a>
                             <a class="dropdown-item" href="dataSources">Data Sources</a>
                     </div>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-            </form>
         </div>
     </nav>
 
 <!-- Container -->
     <div class = "container">
         <div class="jumbotron">
-            <h1 class="display-3">The Transit Hub</h1>
+            <h1 class="display-3">Data Sources</h1>
             <p class="lead"></p>
             <hr class="my-4">
-            <p>Public transit is an integral part of the landscape of an organized society. A well-developed and well-patronized public transit system provides connectivity to schooling, jobs, and other essential services. These services are especially useful for a citizenry without the financial resources to sustain the cost of ownership of a private vehicle. A robust and sustainable public transit system is also a pivotal force in combating carbon emissions as nations come to terms in the global effort in addressing climate change. 
+            <p style="font-size:large; font-weight:600">Bus Stops</p>
+                <p>We used data from the US Department of Transportation ArcGIS Online to find the location of as many bus stops as was available. <br>
+                <br>
+                Dataset: The <a href = "https://data-usdot.opendata.arcgis.com/datasets/gtfs-ntm-stops">General Transit Feed Specification (GTFS)</a> dataset as of August 26, 2020 and is from the Federal Transit Administration (FTA), and part of U.S. Department of Transportation (USDOT)/Bureau of Transportation Statistics' (BTS') National Transportation Atlas Database (NTAD). This dataset, also known as GTFS static or static transit to differentiate it from the GTFS real-time extension, defines a common format for public transportation schedules and associated geographic information. GTFS "feeds" let public transit agencies publish their transit data and developers write applications that consume that data in an interoperable way. GTFS Data stored in the National Transit Map database's. GTFS Specification: https://developers.google.com/transit/gtfs/reference/   </p>
                 <br>
                 <br>
-                According to the American Public Transportation Association, Americans took 9.9 billion trips on public transit in 2019, which drives home the core importance of public transit in the US and the extent to which Americans rely on this public service.
+
+            <p style="font-size:large; font-weight:600">Rail Stations</p>
+                <p>We used the Homeland Infrastructure Foundation-Level Data to find the location of as many rail stations as was available.<br>
+                <br>
+                Dataset: The <a href = "https://hifld-geoplatform.opendata.arcgis.com/datasets/public-transit-stations">Public Transit Stations</a> feature class/shapefile is composed of fixed rail transit stations within the Continental United States, Alaska, Hawaii, the District of Columbia, and Puerto Rico. The modes of transit that are serviced by these stations include cable car, commuter rail, heavy rail, inclined plane, light rail, monorail/automated guideway, and streetcar rail as defined by the Federal Transit Administration, US Department of Transportation.</p>
                 <br>
                 <br>
-                Public transit is also a matter that is regularly on local and state level ballots to increase or decrease funding, and is one of a few government-funded services that receives lip service support on both sides of the political aisle. However, information on public transit stops, funding, and ridership is scattered at best. Various stakeholders rely on this data to further their goals. Lawmakers amend policy and funding in order to address the needs of their constituents. Advocacy groups use this data in order to amend their requests and strategy. Local businesses use transportation options in their benefits packages when attracting new talent. 
+            <p style="font-size:large; font-weight:600">Funding</p>
+                <p>We used data from the US Department of Transportation to find funding data from various sources across the US, including time-series data for the last decade and 2019 funding-source data. <br>
+                <br>
+                Dataset: The <a href = "https://www.transit.dot.gov/ntd/data-product/monthly-module-raw-data-release">Monthly Module Raw Data Release</a> contains monthly-updated service information reported by urban Full Reporters, released before adjustments.<br>
+                <br>
+                Dataset: The <a href = "https://www.transit.dot.gov/ntd/data-product/2019-time-series">2019 Time Series</a> files present NTD data by year, as far back as achievable, to allow for series and trend analyses. There were no changes to the time series in 2019 other than to add the data from Report Year 2019. As a reminder, effective with the 2017 release, the Time Series reflects data reported to the National Transit Database (NTD) by public transit operators in rural areas. To perform urban-only analysis, data users should filter the Reporting Module column of each tab to 'Urban' or filter the Primary Urbanized Area (UZA) column to '(Blanks)'.<br>
+                <br>
+                Dataset: The <a href = "https://www.transit.dot.gov/ntd/data-product/monthly-module-raw-data-release">2019 Funding Sources</a> file contains sources of revenue applied by each public transportation agency to operations and capital.
                 <br>
                 <br>
-                Our tool, The Transit Hub, offers a comprehensive, interactive picture of the public transit landscape across the United States.
+
+            <p style="font-size:large; font-weight:600">Ridership</p>
+                <p>We used data from the American Public Transit Association to extract ridership data on a year over year basis for the US overall.<br>
                 <br>
-                <br>
-                Users looking to understand the volume and sources of transit funding in different states can access the Public Transportation Funding map and see both at a glance and on a more granular scale where funding comes from for different states and the volume of said funding. On the funding page, users may also access a machine learning linear regression model that predicts transit ridership based on urban transit funding and previous year’s as well as the previous two year’s ridership, with an error rate of less than 10%. This will prove useful to lawmakers and/or advocates looking to use all available funding in a given area and understand where funding may have been exhausted from a certain source. The machine learning model will also allow users to understand approximately how much they can expect ridership to change given changes in funding. 
-                (link to funding map page)
-                <br>
-                <br>
-                Users looking to understand the relative accessibility of transit stops in different areas can access the Public Transit Accessibility map and see the distribution of bus and rail stops across the US based on available data. This will prove especially useful to lawmakers and administrators in various public transit authorities looking to understand existing accessibility of transit stops and to more accurately target new areas for expansion. Private transit companies can also utilize this map to see where business opportunities lie by looking for two main factors: where there is relatively a high population that is not being served.
-                (link to connectivity map). 
-                <br>
-                <br>
-                Users looking to understand public sentiment regarding public transit can access the Public Sentiment Map and see at a glance whether local transit users feel positively or negatively about their transit experiences. This data will prove useful to target areas for improvement in existing transit ecosystems. Positive public sentiment is an important metric for lawmakers and administrators to understand and seek to improve, as citizens who feel more positively about their local transit systems may be more likely to pass increased taxes or other funding measures. 
-                (link to natural language processing page)
-                </p>
+                Dataset: The <a href = "https://www.apta.com/research-technical-resources/transit-statistics/ridership-report/">Public Transportation Ridership Report</a> is a quarterly report of transit passenger ridership for U.S. and Canadian transit agencies.  The report includes quarterly and year-to-date estimated unlinked transit passenger trips for the current and previous year by transit mode.  In addition, agency specific ridership is provided for participating transit agencies.  Reports are published approximately 60-75 days after the end of the quarter.</p>
         </div>
     </div>
 </body>

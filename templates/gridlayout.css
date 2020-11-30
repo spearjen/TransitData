@@ -1,6 +1,0 @@
-container {
-    display:grid;
-    height:100vh;
-    grid-template-columns:1fr 1fr 1fr 1fr;
-    grid-template-columns:.2fr 1.5fr 1.2fr .8fr;
-}

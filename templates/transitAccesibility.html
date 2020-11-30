@@ -16,9 +16,16 @@
 
 <!-- Navbar -->
 <body style = "background-color: #e9ecef">
+    <style>
+            .tableauPlaceholder{
+      border-color: rgba(0,0,0,.125);
+      border-width: 1px;
+      border-style: solid;
+    }
+    </style>
     <div style="background-image: url('https://github.com/spearjen/TransitData/blob/spearjay/graphics/pubTransitimage.jpg?raw=true');"></div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">The Transit Hüb</a>
+        <a class="navbar-brand" href="#">The Transit Hüb</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -45,11 +52,10 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">References & Resources</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Public Transportation during a Pandemic</a>
-                        <a class="dropdown-item" href="#">Machine Learning & Public Transportation</a>
-                        <a class="dropdown-item" href="#">More Articles of Interest</a>
+                        <a class="dropdown-item" href="resources">Resources of Interest</a>
                         <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Data Sources</a>
+                            <a class="dropdown-item" href="methods">Methods & Findings</a>
+                            <a class="dropdown-item" href="dataSources">Data Sources</a>
                     </div>
                 </li>
             </ul>
@@ -59,11 +65,11 @@
 <!-- Container -->
     <div class = "container">
         <div class="jumbotron">
-            <h1 class="display-3">Public Transit Availability</h1>
-            <p class="lead">How available is public transit in the United States?</p>
+            <h1 class="display-3">Availability of Public Transit</h1>
+            <p class="lead">How easy is it to take public transportation in the United States?</p>
             <hr class="my-4">
             <p>This is a fully interactive map of the United States representing the population density by county compared to the location of transit stops. Zoom in and click on any dot to see more information about the stop!</p>
-            <div class='tableauPlaceholder' id='viz1605981070712' style='position: relative' style='border: 1px solid rgba(0,0,0,.125)'>
+            <div class='tableauPlaceholder' id='viz1605981070712' style='position: relative'>
                 <noscript><a href='#'>
                     <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bu&#47;BusandRail&#47;PopulationDensity&#47;1_rss.png' style='border: none' /></a>
                 </noscript>

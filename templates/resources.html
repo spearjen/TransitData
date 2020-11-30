@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>The Transit Hüb</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/sandstone/bootstrap.min.css" integrity="sha384-zEpdAL7W11eTKeoBJK1g79kgl9qjP7g84KfK3AZsuonx38n8ad+f5ZgXtoSDxPOh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<!-- Navbar -->
+<body style = "background-color: #e9ecef">
+    <div style="background-image: url('https://github.com/spearjen/TransitData/blob/spearjay/graphics/pubTransitimage.jpg?raw=true');"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">The Transit Hüb</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="naturalLanguage">Public Sentiment</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="timeSeriesFunding">Federal Funding: Time Series</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="fundingBySource">Funding Sources by City & Agency</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="transitAccesibility">Availability</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">References & Resources</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="resources">Resources of Interest</a>
+                        <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="methods">Methods & Findings</a>
+                            <a class="dropdown-item" href="dataSources">Data Sources</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+<!-- Container -->
+    <div class = "container">
+        <div class="jumbotron">
+            <h1 class="display-3">Resources </h1>
+            <hr class="my-4">
+            <p style="font-size:large; font-weight:600">Public Transit in the News</p>
+            <br>
+            <br>
+
+            <p style="font-size:large; font-weight:600">Public Transit: Raw Data Websites</p>
+            <a href = "https://www.bts.gov/">Bureau of Transporation Statistics</a>
+            <br>
+            
+        </div>
+    </div>
+</body>

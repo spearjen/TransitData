@@ -23,11 +23,21 @@
       padding-right: 0px;
       padding-left: 10px;
     }
+    .tableauPlaceholder{
+      border-color: rgba(0,0,0,.125);
+      border-width: 1px;
+      border-style: solid;
+      min-height: 60%;
+      min-width:100%;
+    }
+    .card-header {
+      font-size: 15pt;
+    }
   </style>
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">The Transit Hüb</a>
+    <a class="navbar-brand" href="#">The Transit Hüb</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -54,11 +64,10 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">References & Resources</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Public Transportation during a Pandemic</a>
-            <a class="dropdown-item" href="#">Machine Learning & Public Transportation</a>
-            <a class="dropdown-item" href="#">More Articles of Interest</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Data Sources</a>
+            <a class="dropdown-item" href="resources">Resources of Interest</a>
+            <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="methods">Methods & Findings</a>
+                <a class="dropdown-item" href="dataSources">Data Sources</a>
           </div>
         </li>
       </ul>
@@ -71,12 +80,15 @@
 
       <!-- Top Tableau Embed -->
       <div class="col-sm-7">
+        <br>
+        <br>
         <h1 class="display-3">Public Sentiment</h1>
         <p class="lead">Tweets may give insight into how people feel about public transit</p>
         <hr class="my-4">
+        <br>
         <p>Click on a dot to see the polarity and subjectivity rating for each state’s tweets about public transit. A polarity score closer to +1 means the state was tweeting more positively, where a score closer to -1 means more negative tweets, and a score closer to 0 is neutral. A subjectivity score closer to 0 indicates objective tweets, where a score closer to +1 indicates subjective tweets.</p>
-
-        <div class='tableauPlaceholder' id='viz1605979174951' style='position: relative' style='border: 1px solid rgba(0,0,0,.125)'>
+        <br>
+        <div class='tableauPlaceholder' id='viz1605979174951' style='position: relative'>
           <noscript>
             <a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Po&#47;PolarityvsSubjectivityofState-LevelPublicTransitRelatedTweets&#47;Dashboard2&#47;1_rss.png' style='border: none' /></
           </noscript>
@@ -106,7 +118,7 @@
             vizElement.parentNode.insertBefore(scriptElement, vizElement);                
           </script>
         </div>
-        <br>
+        <!-- <br>
         <br>
         <br>
 
@@ -115,18 +127,20 @@
       <hr class="my-4">
       <p>The orange dots on this graph show the predicted ridership over the past 20 years based on urban transit funding, the previous year’s ridership, and the ridership from two years ago. The blue dots show actual ridership, demonstrating the relatively high accuracy of this model and its potential to predict future ridership based on these features.</p>
 
-      <img src="https://github.com/spearjen/TransitData/blob/spearjay/graphics/mlmodel.png?raw=true" style = "border-radius: 3px" style= "border-color: #343a40">
+      <img src="https://github.com/spearjen/TransitData/blob/spearjay/graphics/mlmodel.png?raw=true" style = "border-radius: 3px" style= "border-color: #343a40"> -->
     </div>
       
       <!--Tableau Card Embed -->
       <div class="col-sm-4">
+        <br>
+        <br>
         <div class="card mb-3">
           <h3 class="card-header">Polarity & Subjectivity</h3>
           <div class="card-body">
             <h7 class="card-title">Hover over the circles on this graph to see the overall polarity and subjectivity associated with general US tweets about public transit.</h7>
           </div>
           <div class="card-body">
-            <div class='tableauPlaceholder' id='viz1606618145617' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;US&#47;USTweetSentiment-PubTransit-JS&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='USTweetSentiment-PubTransit-JS&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;US&#47;USTweetSentiment-PubTransit-JS&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1606618145617');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='400px';vizElement.style.height='327px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='400px';vizElement.style.height='327px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+            <div class='tableauPlaceholder' id='viz1606618145617' style='position: relative' style='border: 5px solid rgba(0,0,0,.125)'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;US&#47;USTweetSentiment-PubTransit-JS&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='USTweetSentiment-PubTransit-JS&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;US&#47;USTweetSentiment-PubTransit-JS&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1606618145617');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='400px';vizElement.style.height='327px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='400px';vizElement.style.height='327px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
           </div>
         </div>
       </div>
