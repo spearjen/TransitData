@@ -15,6 +15,39 @@
     <!-- <script src ="https://js-agent.newrelic.com/nr-1184.min.js"></script> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+    src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+    <script type="text/javascript">
+        var vizList = ['https://public.tableau.com/views/FederalFundingperState-JSedit/FederalFunding?:language=en&:display_count=y&publish=yes&:origin=viz_share_link','https://public.tableau.com/views/SalesvsRidership/SalesvsRidership?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/TotalvsRidership/TotalvsRidership?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/RailvsRidership/RailvsRidership?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/BusvsRidership/BusvsRidership?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/CategorySplitFunding/FundingCategory?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/TotalFederalFunding/Total?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/StateofGoodRepairFunding/StateofGoodRepair?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/BusBusFacilitiesFunding/Bus?:language=en&:display_count=y&:origin=viz_share_link']
+;
+
+        var viz,
+            vizLen = vizList.length,
+            vizCount = 0;
+
+        function createViz(vizPlusMinus) {
+            var vizDiv = document.getElementById("vizContainer"),
+                options = {
+                    hideTabs: true
+                };
+
+            vizCount = vizCount + vizPlusMinus;
+
+            if (vizCount >= vizLen) {
+            // Keep the vizCount in the bounds of the array index.
+                vizCount = 0;
+            } else if (vizCount < 0) {
+                vizCount = vizLen - 1;
+            }
+
+            if (viz) { // If a viz object exists, delete it.
+                viz.dispose();
+            }
+
+            var vizURL = vizList[vizCount];
+            viz = new tableau.Viz(vizDiv, vizURL, options);
+        }
+    </script>
 </head>
 
 <body style = "background-color: #e9ecef"></body>
@@ -88,18 +121,22 @@
         <div class="col-sm-7">
             <br>
             <br>
-            <h1 class="display-3">Federal Funding: Time Series</h1>
-            <p class="lead">How has federal funding changed over time? <br>Use the dropdown to explore datasets.</p>
+            <h1 class="display-3">Federal Funding</h1>
+            <p class="lead">How has federal funding for public transit changed over the last decade?</p>
             <hr class="my-4">
-            <div class="card mb-3">
-                <!-- <h3 class="card-header">Make a selection:</h3> -->
-                <div class="card-body">
-                    <div class="well">
+                    <p style="font-weight:lighter">Description goes here onclick</p>
+                    <!-- <div class="well">
                         <select id="changeViz" onchange="indexIdNo(this.value)"></select>
-                    </div>
+                    </div> -->
+            <body onload="createViz(0);">
+                <div id="controls" style="padding:5px;">
+                    <button style="width:100px;" onclick="javascript:createViz(-1);">Previous</button>
+                    <button style="width:100px;" onclick="javascript:createViz(1);">Next</button>
                 </div>
-            </div>
-            <div id="vizContainer"></div>
+                <div id="vizContainer" style="width:100%""></div>
+
+            </body>
+            <!-- <div id="vizContainer"></div> -->
             <!-- <br>
             <br>
             <h1 class="display-4">Ridership & Funding</h1>
@@ -119,8 +156,6 @@
                     </div>
                 </div>
             </div> -->
-            <br>
-            <br>
             <div class="card mb-3">
                 <h3 class="card-header">Ridership & Funding</h3>
                 <div class="card-body">
