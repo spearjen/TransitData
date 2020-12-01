@@ -27,7 +27,7 @@
     }
     .vl {
         border-left: 1px solid black;
-        height: 1650px;
+        height: 95%;
         margin-bottom: 25px;
         margin-right: 25px;
         margin-left: 25px;
@@ -49,10 +49,20 @@
     }
     @media (max-width: 767px) {
         .bgSizeCover {
-            background-image: url(https://www.uncovercolorado.com/railroads/rtd-light-rail/);
+            background-image: url(https://github.com/spearjen/TransitData/blob/main/graphics/denLightRail.jpg?raw=true);
             background-size: cover;
-            height: 50%;
+            width: 100%;
             resize: both;   
+        }
+    }
+    @media (max-width: 767px) {
+        .vl {
+        border-left: 0px solid black;
+        height: 0px;
+        margin-bottom: 0px;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
         }
     }
         
