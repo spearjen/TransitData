@@ -25,18 +25,6 @@
         border-width: 2px;
         border-style: solid */
     }
-    .container {
-        height: 1600px;
-        display: grid;
-        grid-template-columns: repeat(100px auto-fit, 100px);
-        grid-template-rows: repeat(2, 100px);
-        grid-template-areas:
-            "n n n n n n n n n n n n"
-            "l j j j j j j j j j j r"
-            "f f f f f f f f f f f f";
-        grid-gap: 3px;
-        background-color: #e9ecef;
-    }
     .vl {
         border-left: 1px solid black;
         height: 1650px;
@@ -59,7 +47,15 @@
     .navbar {
         grid-area: n;
     }
-    
+    @media (max-width: 767px) {
+        .bgSizeCover {
+            background-image: url(https://www.uncovercolorado.com/railroads/rtd-light-rail/);
+            background-size: cover;
+            height: 50%;
+            resize: both;   
+        }
+    }
+        
     /* @media (max-width:767px) {
 
         #wrapper {
@@ -124,36 +120,45 @@
     </nav>
 
 <!-- Content -->
-    <div class="jumbotron">
-        <div class = "container">
-            <h1 class="display-3">The Transit Hüb
-                <p class="lead">Providing reliable data for public transit decision-making</p>
-                <div class="bgSizeCover"></div>
-            </h1>
-            <div class="vl"></div>
-            <hr class="my-4">
+    <div class = "container">
+        <div class="row">
 
-            <p><br>Public transit is an integral part of the landscape of an organized society. A well-developed and well-patronized public transit system provides connectivity to schooling, jobs, and other essential services. These services are especially useful for a citizenry without the financial resources to sustain the cost of ownership of a private vehicle. A robust and sustainable public transit system is also a pivotal force in combating carbon emissions as nations come to terms in the global effort in addressing climate change. 
+            <!-- Top Tableau Embed -->
+            <div class="col-sm-6">
                 <br>
                 <br>
-                According to the American Public Transportation Association, Americans took 9.9 billion trips on public transit in 2019, which drives home the core importance of public transit in the US and the extent to which Americans rely on this public service.
+                <h1 class="display-3">The Transit Hüb
+                    <p class="lead">Providing reliable data for public transit decision-making</p>
+                    <div class="bgSizeCover"></div>
+                </h1>
+            </div>
+            <div class="col-sm-1">
                 <br>
                 <br>
-                Public transit is also a matter that is regularly on local and state level ballots to increase or decrease funding and is one of a few government-funded services that receives lip service support on both sides of the political aisle. However, information on public transit stops, funding, and ridership is scattered at best. Various stakeholders rely on this data to further their goals. Lawmakers amend policy and funding in order to address the needs of their constituents. Advocacy groups use this data in order to amend their requests and strategy. Local businesses use transportation options in their benefits packages when attracting new talent. 
-                <br>
-                <br>
-                Our tool, The Transit Hüb, offers a comprehensive, interactive picture of the public transit landscape across the United States.
-                <br>
-                <br>
-                Users looking to understand the volume and sources of transit funding in different states can access the <a href = "fundingBySource">Funding Sources by City & Agency</a> map and see both at a glance and on a more granular scale where funding comes from for different cities and the volume of said funding. On the <a href="timeSeriesFunding">Federal Fuding: Time Series</a> page, users can examine a variety of visualizations regarding the changes in federal funding for bus and rail transit over the last decade.  Users may also access a machine learning linear regression model that predicts transit ridership based on urban transit funding and previous year’s as well as the previous two year’s ridership, with an error rate of less than 10%. This will prove useful to lawmakers and/or advocates looking to use all available funding in a given area and understand where funding may have been exhausted from a certain source. The machine learning model will also allow users to understand approximately how much they can expect ridership to change given changes in funding. 
-                <br>
-                <br>
-                Users looking to understand the relative availablity of transit stops in different areas can access the <a href = "transitAccesibility">Availability</a> map and see the distribution of bus and rail stops across the US based on available data. This will prove especially useful to lawmakers and administrators in various public transit authorities looking to understand existing availablity of transit stops and to more accurately target new areas for expansion. Private transit companies can also utilize this map to see where business opportunities lie by looking for two main factors: where there is relatively a high population that is not being served.
-                <br>
-                <br>
-                Users looking to understand public sentiment regarding public transit can access the <a href = "naturalLanguage">Public Sentiment</a> map and see at a glance whether local transit users feel positively or negatively about their transit experiences. This data will prove useful to target areas for improvement in existing transit ecosystems. Positive public sentiment is an important metric for lawmakers and administrators to understand and seek to improve, as citizens who feel more positively about their local transit systems may be more likely to pass increased taxes or other funding measures. 
-                </p>
-        </div>
+                <div class="vl"></div>
+            </div>
+            <div class="col-sm-5">
+                <p><br><br><br><br>Public transit is an integral part of the landscape of an organized society. A well-developed and well-patronized public transit system provides connectivity to schooling, jobs, and other essential services. These services are especially useful for a citizenry without the financial resources to sustain the cost of ownership of a private vehicle. A robust and sustainable public transit system is also a pivotal force in combating carbon emissions as nations come to terms in the global effort in addressing climate change. 
+                    <br>
+                    <br>
+                    According to the American Public Transportation Association, Americans took 9.9 billion trips on public transit in 2019, which drives home the core importance of public transit in the US and the extent to which Americans rely on this public service.
+                    <br>
+                    <br>
+                    Public transit is also a matter that is regularly on local and state level ballots to increase or decrease funding and is one of a few government-funded services that receives lip service support on both sides of the political aisle. However, information on public transit stops, funding, and ridership is scattered at best. Various stakeholders rely on this data to further their goals. Lawmakers amend policy and funding in order to address the needs of their constituents. Advocacy groups use this data in order to amend their requests and strategy. Local businesses use transportation options in their benefits packages when attracting new talent. 
+                    <br>
+                    <br>
+                    Our tool, The Transit Hüb, offers a comprehensive, interactive picture of the public transit landscape across the United States.
+                    <br>
+                    <br>
+                    Users looking to understand the volume and sources of transit funding in different states can access the <a href = "fundingBySource">Funding Sources by City & Agency</a> map and see both at a glance and on a more granular scale where funding comes from for different cities and the volume of said funding. On the <a href="timeSeriesFunding">Federal Fuding: Time Series</a> page, users can examine a variety of visualizations regarding the changes in federal funding for bus and rail transit over the last decade.  Users may also access a machine learning linear regression model that predicts transit ridership based on urban transit funding and previous year’s as well as the previous two year’s ridership, with an error rate of less than 10%. This will prove useful to lawmakers and/or advocates looking to use all available funding in a given area and understand where funding may have been exhausted from a certain source. The machine learning model will also allow users to understand approximately how much they can expect ridership to change given changes in funding. 
+                    <br>
+                    <br>
+                    Users looking to understand the relative availablity of transit stops in different areas can access the <a href = "transitAccesibility">Availability</a> map and see the distribution of bus and rail stops across the US based on available data. This will prove especially useful to lawmakers and administrators in various public transit authorities looking to understand existing availablity of transit stops and to more accurately target new areas for expansion. Private transit companies can also utilize this map to see where business opportunities lie by looking for two main factors: where there is relatively a high population that is not being served.
+                    <br>
+                    <br>
+                    Users looking to understand public sentiment regarding public transit can access the <a href = "naturalLanguage">Public Sentiment</a> map and see at a glance whether local transit users feel positively or negatively about their transit experiences. This data will prove useful to target areas for improvement in existing transit ecosystems. Positive public sentiment is an important metric for lawmakers and administrators to understand and seek to improve, as citizens who feel more positively about their local transit systems may be more likely to pass increased taxes or other funding measures. 
+                    </p>
+            </div>
 
 
 <!-- Left side     -->
@@ -170,5 +175,6 @@
         <div class="footer">
         </div>
     </div> -->
+
 
 </body>
