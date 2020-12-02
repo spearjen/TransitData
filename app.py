@@ -2,8 +2,8 @@
 from flask import Flask, render_template, redirect
 from flask_restful import Resource, Api, reqparse
 import os
-from flask_pymongo import PyMongo
-import scrape_transit
+# from flask_pymongo import PyMongo
+# import scrape_transit
 
 # # import otherroute! which is another py file
 # try:
