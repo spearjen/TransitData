@@ -23,8 +23,8 @@ api = Api(app)
 # cors=CORS(app, resources=r'smallSst.json', allow_headers='Content-Type')
 
 # setup conn to PyMongo
-app.config['MONGO_URI'] = 'mongodb://localhost:27017/transitDB'
-mongo = PyMongo(app)
+# app.config['MONGO_URI'] = 'mongodb://localhost:27017/transitDB'
+# mongo = PyMongo(app)
 
 @app.route("/")
 def index():
@@ -60,8 +60,8 @@ def dataSources():
     return render_template("dataSources.html")
 
 # setup conn to PyMongo
-app.config['MONGO_URI'] = 'mongodb://localhost:27017/marsDB'
-mongo = PyMongo(app)
+# app.config['MONGO_URI'] = 'mongodb://localhost:27017/marsDB'
+# mongo = PyMongo(app)
  
 # create route that scrapes mars data and store as dictionary and to MongoDB
 # @app.route('/scrape')
