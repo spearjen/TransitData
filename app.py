@@ -19,7 +19,7 @@ import scrape_transit
 
 #create Flask app instance
 app = Flask(__name__)
-# api = Api(app)
+api = Api(app)
 # cors=CORS(app, resources=r'smallSst.json', allow_headers='Content-Type')
 
 # setup conn to PyMongo
