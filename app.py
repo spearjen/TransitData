@@ -48,8 +48,8 @@ def transitAccesibility():
 
 @app.route("/resources")
 def resources():
-    transitArticles=mongo.db.transitArticles.find_one()
-    return render_template("resources.html", transitArticles=transitArticles)
+    # transitArticles=mongo.db.transitArticles.find_one()
+    return render_template("resources.html")
 
 @app.route("/methods")
 def methods():
