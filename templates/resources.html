@@ -14,18 +14,32 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
-<!-- Navbar -->
+
 <body style = "background-color: #e9ecef">
+    <style>
+    .tab {
+        display: inline-block;
+        margin-left: 40px;
+    }
+    .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+        position: relative;
+        width: 100%;
+        min-height: 1px;
+        padding-right: 0px;
+        padding-left: 10px;
+    }
+    </style>
+
+    <!-- Navbar -->
     <div style="background-image: url('https://github.com/spearjen/TransitData/blob/spearjay/graphics/pubTransitimage.jpg?raw=true');"></div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">The Transit Hüb</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="#">The Transit Hüb</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
   
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="/">Home
                         <span class="sr-only">(current)</span>
                     </a>
@@ -43,7 +57,7 @@
                     <a class="nav-link" href="transitAccesibility">Availability</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">References & Resources</a>
+                    <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">References & Resources</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="resources">Resources of Interest</a>
                         <div class="dropdown-divider"></div>
@@ -58,16 +72,64 @@
 <!-- Container -->
     <div class = "container">
         <div class="jumbotron">
-            <h1 class="display-3">Resources </h1>
-            <hr class="my-4">
-            <p style="font-size:large; font-weight:600">Public Transit in the News</p>
-            <br>
-            <br>
+            <div class = "row">
+                <div class="col-sm-6">
+                    <br><br><br><br><br><br>
+                    <h1 class="display-3">Resources </h1>
+                    <hr class="my-4">
+                </div>
+                <div class="col-sm-5">
+                    <h1 class="display-3"><iframe width="500" height="300" src="https://www.youtube.com/embed/ukOHqdPbYYg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </h1>
+                </div>
+            </div>
 
-            <p style="font-size:large; font-weight:600">Public Transit: Raw Data Websites</p>
-            <a href = "https://www.bts.gov/">Bureau of Transporation Statistics</a>
-            <br>
-            
+                
+
+                <p style="font-size:x-large; font-weight:600">Public Transit in the News<span class="tab"></span><a class="btn btn-primary btn-lg" href="/scrape" role="button" style = "font-size: 12px">Scrape the Web</a></p>
+
+                <p style="font-size:large; font-weight:600"><a href = "{{transitArticles.google_url}}" target="_blank">{{transitArticles.google_news_title}}</a></p>
+                    <p>{{transitArticles.google_news_paragraph}}<br>
+                    {{transitArticles.google_news_source}}, {{transitArticles.google_news_date}}<span class="tab"></span><br>
+                    (visit <a href="https://news.google.com/topics/CAAqIQgKIhtDQkFTRGdvSUwyMHZNRGRpYzNrU0FtVnVLQUFQAQ/sections/CAQqEAgAKgcICjCj9vAKMM_ruwIwqaLKBQ?hl=en-US&gl=US&ceid=US%3Aen">Google News</a> aggregator for more public transit news)</p>
+                <br>
+
+                <p style="font-size:large; font-weight:600"><a href = "{{transitArticles.transitmag_url}}" target="_blank">{{transitArticles.transitmag_title}}</a></p>
+                    <p>{{transitArticles.transitmag_paragraph}}<br>
+                    <a href ="{{transitArticles.transitmag_url}}" target="_blank">{{transitArticles.transitmag_source}}</a>, {{transitArticles.transitmag_date}}</p>
+                <br>
+                
+
+                <p style="font-size:x-large; font-weight:600">Public Transit Articles We Like</p>
+
+                <p style="font-size:large; font-weight:600"><a href = "https://www.pewresearch.org/fact-tank/2016/04/07/who-relies-on-public-transit-in-the-u-s/" target = "_blank">Who relies on public transit in the U.S.?</a></p>
+                    <p>America’s love affair with the car is well-documented, but many U.S. adults also rely on a bus, train or subway to get around. One-in-ten Americans (11%) say they take public transportation on a daily or weekly basis, according to a new Pew Research Center survey conducted in late 2015, but who is taking public transit varies substantially by region, nativity, and race and ethnicity.<br>
+                    <a href = "https://www.pewresearch.org/" target="_blank">Pew Research Center</a>, April 7, 2016</p>
+                <br>
+
+                <p style="font-size:large; font-weight:600"><a href = "https://mobilitylab.org/2018/06/06/bottom-line-protected-bike-lanes-boost-business/" target = "_blank">Bottom line: Protected bike lanes boost business</a></p>
+                    For years, we’ve written about the trickle of good research that is starting to prove that protected bike lanes and better sidewalks do a lot to spur sales at street-front businesses.<br>
+                    <p><a href = "https://mobilitylab.org/" target="_blank">Mobility Lab</a>, June 6, 2018</p>
+                <br>
+
+                <p style="font-size:large; font-weight:600"><a href = "https://blog.google/products/maps/get-around-safely-these-new-google-maps-features/" target="_blank">Get around safely with these new Google Maps features</a></p>
+                    Getting from A to B can be more complicated these days. Because of COVID-19, it’s increasingly important to know how crowded a train station might be at a particular time or whether the bus is running on a limited schedule. Having this information before and during your trip is critical for both essential workers who need to safely navigate to work and will become more important for everyone as countries around the world begin to reopen.<br>
+                    <p><a href = "https://blog.google/products/maps/" target="_blank">News about Google Maps, Official Blog</a>, June 8, 2020</p>
+                <br>
+
+                <p style="font-size:x-large; font-weight:600">Plan Your Trip</p>
+                <p style="font-size:large; font-weight:600"><a href = "https://maps.google.com/landing/transit/index.html" target="_blank">Google Maps Transit</a>
+                
         </div>
     </div>
 </body>
+
+<!-- 'google_news_title':google_title,
+'google_news_paragraph':google_para,
+'google_news_source':google_source,
+'google_news_date':google_date,
+'google_url':google_url,
+'transitmag_title':transitmag_title,
+'transitmag_paragraph':transitmag_para,
+'transitmag_source':transitmag_source,
+'transitmag_date':transitmag_date,
+'transitmag_url':transitmag_url -->

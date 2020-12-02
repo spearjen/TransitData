@@ -6,94 +6,80 @@ import pandas as pd
 import pymongo
 import datetime as dt
 
-def scrape_all():
+# conn='mongodb://localhost:27017'
+# client = pymongo.MongoClient(conn)
+# db=client.transitDB
 
+def scrape_all():
     executable_path = {'executable_path': 'chromedriver.exe'}
     browser = Browser('chrome', **executable_path, headless=False)
 
-    url = 'https://news.google.com/topics/CAAqIQgKIhtDQkFTRGdvSUwyMHZNRGRpYzNrU0FtVnVLQUFQAQ/sections/CAQqEAgAKgcICjCj9vAKMM_ruwIwqaLKBQ?hl=en-US&gl=US&ceid=US%3Aen'
-    browser.visit(url)
+    google_url = 'https://news.google.com/topics/CAAqIQgKIhtDQkFTRGdvSUwyMHZNRGRpYzNrU0FtVnVLQUFQAQ/sections/CAQqEAgAKgcICjCj9vAKMM_ruwIwqaLKBQ?hl=en-US&gl=US&ceid=US%3Aen'
+    browser.visit(google_url)
 
     time.sleep(2)
 
     html = browser.html
     soup = BeautifulSoup(html,'html.parser')
-    # article = soup.find('div',class_="list_text")
 
     try:
-        title = soup.find('div',class_='DY5T1d').text.strip()
+        google_title = soup.find('h3',class_='ipQwMb ekueJc RD0gLb').text.strip()
     except: 
-        title = '[No information returned. Click the button again.]'
+        google_title = '[No information returned. Click the button again.]'
     try:
-        para = soup.find('div',class_='Da10Tb Rai5ob').text.strip()
+        google_para = soup.find('div',class_='Da10Tb Rai5ob').text.strip()
     except:
-        para = '[No information returned.  Click the button again.]'
+        google_para = '[No information returned.  Click the button again.]'
     try:
-        source = soup.find('div',class_='article_teaser_body').text.strip()
+        google_source = soup.find('a',class_='wEwyrc AVN2gc uQIVzc Sksgp').text.strip()
     except:
-        source = '[No information returned.  Click the button again.]'
+        google_source = '[No information returned.  Click the button again.]'
+    try:
+        google_date = soup.find('time',class_='WW6dff uQIVzc Sksgp').text.strip()
+    except:
+        google_date = '[No information returned.  Click the button again.]'
 
-    url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
-    browser.visit(url)
+    browser.quit()
 
-    browser.click_link_by_id('full_image')
+    executable_path = {'executable_path': 'chromedriver.exe'}
+    browser = Browser('chrome', **executable_path, headless=False)
+
+    transitmag_url = 'https://www.masstransitmag.com/'
+    browser.visit(transitmag_url)
+    transitmag_source = 'Mass Transit Magazine'
+
+    time.sleep(2)
 
     html = browser.html
     soup = BeautifulSoup(html,'html.parser')
 
-    featured_image_url = soup.article.a['data-fancybox-href']
-    featured_image_url = (f'https://www.jpl.nasa.gov{featured_image_url}')
-    descrip =soup.h1.text.strip()
-
-    url = 'https://space-facts.com/mars/'
-    browser.visit(url)
-
-    tables = pd.read_html(url)
-
-    df = tables[0]
-    df.columns = ['', 'Mars']
-    df = df.set_index('')
-
-    mars_facts= df.to_html(classes='table')
-
-    url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
-    browser.visit(url)
-
-    # Click the link for large image, find title and link, add try and except, store in dict format, append to dict
-    hemisphere_image_urls_dict = []
-    for i in range(4):
-        browser.find_by_css("a.product-item h3")[i].click()
-        hemi_soup = BeautifulSoup(browser.html, "html.parser")
-
-        try:
-            title_elem = hemi_soup.find("h2", class_="title").get_text()
-            sample_elem = hemi_soup.find("a", text="Sample").get("href")
-
-        except AttributeError:
-            title_elem = None
-            sample_elem = None
-
-        hemispheres = {
-            "title": title_elem,
-            "img_url": sample_elem
-        }
-
-        # Append hemisphere info
-        hemisphere_image_urls_dict.append(hemispheres)
-
-        # Finally, we navigate backwards
-        browser.back()
+    try:
+        transitmag_title = soup.find('h5',class_='node__title').text.strip()
+    except: 
+        transitmag_title = '[No information returned. Click the button again.]'
+    try:
+        transitmag_para = soup.find('div',class_='node__text node__text--teaser').text.strip()
+    except:
+        transitmag_para = '[No information returned.  Click the button again.]'
+    try:
+        transitmag_date = soup.find('div',class_='node__footer-right').text.strip()
+    except:
+        transitmag_date = '[No information returned.  Click the button again.]'
 
     browser.quit()
 
     data = {
-        'news_title':title,
-        'news_paragraph':para,
-        'featured_image': featured_image_url,
-        'featured_image_description':descrip,
-        'hemisphere_image_urls': hemisphere_image_urls_dict,
-        'facts':mars_facts,
-        'last_modified':dt.datetime.now()
+        'google_news_title':google_title,
+        'google_news_paragraph':google_para,
+        'google_news_source':google_source,
+        'google_news_date':google_date,
+        'google_url':google_url,
+        'transitmag_title':transitmag_title,
+        'transitmag_paragraph':transitmag_para,
+        'transitmag_source':transitmag_source,
+        'transitmag_date':transitmag_date,
+        'transitmag_url':transitmag_url
     }
 
     return(data)
+

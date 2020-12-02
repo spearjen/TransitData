@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
     <title>The Transit Hüb</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/sandstone/bootstrap.min.css" integrity="sha384-zEpdAL7W11eTKeoBJK1g79kgl9qjP7g84KfK3AZsuonx38n8ad+f5ZgXtoSDxPOh" crossorigin="anonymous">
@@ -12,13 +11,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.2.1.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script>
-    <!-- <script src ="https://js-agent.newrelic.com/nr-1184.min.js"></script> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
-    <script type="text/javascript">
-        var vizList = ['https://public.tableau.com/views/FederalFundingperState-JSedit/FederalFunding?:language=en&:display_count=y&publish=yes&:origin=viz_share_link','https://public.tableau.com/views/SalesvsRidership/SalesvsRidership?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/TotalvsRidership/TotalvsRidership?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/RailvsRidership/RailvsRidership?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/BusvsRidership/BusvsRidership?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/CategorySplitFunding/FundingCategory?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/TotalFederalFunding/Total?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/StateofGoodRepairFunding/StateofGoodRepair?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/BusBusFacilitiesFunding/Bus?:language=en&:display_count=y&:origin=viz_share_link']
-;
+    
+    <!-- <script type="text/javascript">
+        var vizList = ['https://public.tableau.com/views/FederalFundingperState-JSedit/FederalFunding?:language=en&:display_count=y&publish=yes&:origin=viz_share_link','https://public.tableau.com/views/SalesvsRidership/SalesvsRidership?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/TotalvsRidership/TotalvsRidership?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/RailvsRidership/RailvsRidership?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/BusvsRidership/BusvsRidership?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/CategorySplitFunding/FundingCategory?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/TotalFederalFunding/Total?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/StateofGoodRepairFunding/StateofGoodRepair?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/BusBusFacilitiesFunding/Bus?:language=en&:display_count=y&:origin=viz_share_link'];
+        var vizDescrip = ['https://public.tableau.com/views/SalesvsRidership/SalesvsRidership?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/TotalvsRidership/TotalvsRidership?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/RailvsRidership/RailvsRidership?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/BusvsRidership/BusvsRidership?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/CategorySplitFunding/FundingCategory?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/TotalFederalFunding/Total?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/StateofGoodRepairFunding/StateofGoodRepair?:language=en&:display_count=y&:origin=viz_share_link','https://public.tableau.com/views/BusBusFacilitiesFunding/Bus?:language=en&:display_count=y&:origin=viz_share_link'];
+
 
         var viz,
             vizLen = vizList.length,
@@ -44,9 +44,10 @@
             }
 
             var vizURL = vizList[vizCount];
+            var vizPara = vizDescrip[vizCount];
             viz = new tableau.Viz(vizDiv, vizURL, options);
         }
-    </script>
+    </script> -->
 </head>
 
 <body style = "background-color: #e9ecef"></body>
@@ -81,7 +82,7 @@
 
         <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
             <a class="nav-link" href="/">Home
                 <span class="sr-only">(current)</span>
             </a>
@@ -89,7 +90,7 @@
             <li class="nav-item">
             <a class="nav-link" href="naturalLanguage">Public Sentiment</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
             <a class="nav-link" href="timeSeriesFunding">Federal Funding: Time Series</a>
             </li>
             <li class="nav-item">
@@ -123,45 +124,29 @@
             <h1 class="display-3">Federal Funding</h1>
             <p class="lead">How has federal funding for public transit changed over the last decade?</p>
             <hr class="my-4">
-                    <p style="font-weight:lighter">Description goes here onclick</p>
-                    <!-- <div class="well">
-                        <select id="changeViz" onchange="indexIdNo(this.value)"></select>
-                    </div> -->
-            <body onload="createViz(0);">
+            <select id="changeViz"></select>
+            <!-- <body onload="createViz(0);">
                 <div id="controls" style="padding:5px;">
                     <button style="width:100px;" onclick="javascript:createViz(-1);">Previous</button>
                     <button style="width:100px;" onclick="javascript:createViz(1);">Next</button>
                 </div>
                 <div id="vizContainer" style="width:100%""></div>
 
-            </body>
-            <!-- <div id="vizContainer"></div> -->
-            <!-- <br>
-            <br>
-            <h1 class="display-4">Ridership & Funding</h1>
-            <p class="lead">A machine learning model for exploring the relationship</p>
-            <hr class="my-4">
-            <p>The orange dots on this graph show the predicted ridership over the past 20 years based on urban transit funding, the previous year’s ridership, and the ridership from two years ago. The blue dots show actual ridership, demonstrating the relatively high accuracy of this model and its potential to predict future ridership based on these features.</p>
-      
-            <img src="https://github.com/spearjen/TransitData/blob/spearjay/graphics/mlmodel.png?raw=true" style = "width: 99%; border-color: rgba(0,0,0,.125); border-width: 1px; border-style: solid;"> -->
+            </body> -->
+            <div id="vizContainer"></div>
         </div>
 
         <div class="col-sm-5">
-            <!-- <div class="card mb-3">
-                <h3 class="card-header">Make a selection:</h3>
-                <div class="card-body">
-                    <div class="well">
-                        <select id="changeViz" onchange="indexIdNo(this.value)"></select>
-                    </div>
-                </div>
-            </div> -->
+            <br>
+            <br>
+            <br>
             <div class="card mb-3">
                 <h3 class="card-header">Ridership & Funding</h3>
                 <div class="card-body">
-                    <h7 class="card-title">A machine learning model</h7>
+                    <h7 class="card-title">This is a machine learning model.
                     <br>
                     <br>
-                    <h6 class="card-subtitle text-muted" style="font-weight:lighter">The orange dots on this graph show the predicted ridership over the past 20 years based on urban transit funding, the previous year’s ridership, and the ridership from two years ago. The blue dots show actual ridership, demonstrating the relatively high accuracy of this model and its potential to predict future ridership based on these features.</h6>
+                    The orange dots on this graph show the predicted ridership over the past 20 years based on urban transit funding, the previous year’s ridership, and the ridership from two years ago. The blue dots show actual ridership, demonstrating the relatively high accuracy of this model and its potential to predict future ridership based on these features.</h7>
                     <div class="card-body">
                         <img src="https://github.com/spearjen/TransitData/blob/spearjay/graphics/mlmodel.png?raw=true" style = "width: 100%; height: 100%; border-color: rgba(0,0,0,.125); border-width: 1px; border-style: solid;">
                     </div>
