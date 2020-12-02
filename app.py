@@ -59,17 +59,17 @@ def methods():
 def dataSources():
     return render_template("dataSources.html")
 
-    # setup conn to PyMongo
+# setup conn to PyMongo
 app.config['MONGO_URI'] = 'mongodb://localhost:27017/marsDB'
 mongo = PyMongo(app)
  
 # create route that scrapes mars data and store as dictionary and to MongoDB
-@app.route('/scrape')
-def scrape():
-    transitArticles=mongo.db.transitArticles
-    transit_data = scrape_transit.scrape_all()
-    transitArticles.replace_one({},transit_data, upsert=True)
-    return redirect('/resources')
+# @app.route('/scrape')
+# def scrape():
+#     transitArticles=mongo.db.transitArticles
+#     transit_data = scrape_transit.scrape_all()
+#     transitArticles.replace_one({},transit_data, upsert=True)
+#     return redirect('/resources')
 
 if __name__ == '__main__':
     app.run(debug=True, port = 1123)
